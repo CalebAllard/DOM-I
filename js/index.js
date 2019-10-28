@@ -53,7 +53,7 @@ let ctaText = document.querySelector('.cta > .cta-text > h1');
 let textTemp = siteContent['cta']['h1'];
 textTemp = textTemp.split(' ');
 ctaText.innerHTML = textTemp[0] + "<br>" + textTemp[1] + "<br>" + textTemp[2];
-console.log(textTemp);
+// console.log(textTemp);
 // Cta section
 let ctaImage = document.getElementById('cta-img');
 ctaImage.setAttribute('src', siteContent.cta['img-src']);
@@ -71,3 +71,72 @@ let aboutElement = document.querySelector('.main-content > .top-content > .text-
 aboutElement.innerText = siteContent['main-content']['about-h4'];
 aboutElement = document.querySelector('.main-content > .top-content > .text-content:nth-child(2) > p');
 aboutElement.innerText = siteContent['main-content']['about-content'];
+
+let middleImg = document.getElementById('middle-img');
+middleImg.setAttribute('src', siteContent['main-content']['middle-img-src']);
+// main content lower
+let servicesElement = document.querySelector('.bottom-content > .text-content:nth-child(1) > h4');
+servicesElement.innerText = siteContent['main-content']['services-h4'];
+servicesElement = document.querySelector('.bottom-content > .text-content:nth-child(1) > p');
+servicesElement.innerText = siteContent['main-content']['services-content'];
+
+let productElement = document.querySelector('.bottom-content > .text-content:nth-child(2) > h4');
+productElement.innerText = siteContent['main-content']['product-h4'];
+productElement = document.querySelector('.bottom-content > .text-content:nth-child(2) > p');
+productElement.innerText = siteContent['main-content']['product-content'];
+
+let visionElement = document.querySelector('.bottom-content > .text-content:nth-child(3) > h4');
+visionElement.innerText = siteContent['main-content']['vision-h4'];
+visionElement = document.querySelector('.bottom-content > .text-content:nth-child(3) > p');
+visionElement.innerText = siteContent['main-content']['vision-content'];
+
+//contact
+let contentElement = document.querySelector('.contact > h4');
+contentElement.innerText = siteContent.contact['contact-h4'];
+
+let tempAdd = siteContent.contact.address;
+tempAdd = tempAdd.split(/ (?=So)/);
+// console.log(tempAdd);
+
+contentElement = document.querySelector('.contact > p:nth-child(2)');
+contentElement.innerHTML = `${tempAdd[0]} <br> ${tempAdd[1]}`;
+
+
+
+
+contentElement = document.querySelector('.contact > p:nth-child(3)');
+contentElement.innerText = siteContent.contact['phone'];
+contentElement = document.querySelector('.contact > p:nth-child(4)');
+contentElement.innerText = siteContent.contact['email'];
+
+//footer
+let footerElement = document.querySelector('footer > p');
+footerElement.innerText = siteContent.footer.copyright;
+
+// ## Task 3: Add new content
+// * [ ] Change the color of the navigation text to be green.
+// * [ ] Utilize `.appendChild()` and `.prepend()` to add two new items to the navigation system. You can call them whatever you want.
+// * [ ] Check your work by looking at the [original html](original.html) in the browser
+
+
+let navElement = document.querySelector('.container > header > nav');
+let newElement = document.createElement("a");
+newElement.setAttribute('href', '#');
+newElement.innerText = "First";
+navElement.prepend(newElement);
+let secondElement = document.createElement("a");
+secondElement.setAttribute('href', '#');
+secondElement.innerText = "Last";
+navElement.append(secondElement);
+
+document.querySelectorAll('.container > header > nav > a').forEach(element => {
+      element.style.color = 'green';
+});
+
+
+
+
+
+
+
+
